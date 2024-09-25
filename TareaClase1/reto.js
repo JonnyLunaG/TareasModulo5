@@ -9,13 +9,18 @@ const estudiantes = [
     { nombre: "Andres", edad: 45, promedio: 8.7 },
 ];
 
-let mayorPromedio = 0;
+//Metodo 1 usando el ciclo for
+let EstmayorPromedio = estudiantes[0];
 for (let i = 0; i < estudiantes.length; i++) {
-    const estudiante = estudiantes[i];
-    if(mayorPromedio < estudiante.promedio){
-        mayorPromedio = estudiante.promedio
-    }
     
+    if(estudiantes[i].promedio > EstmayorPromedio.promedio){
+        EstmayorPromedio = estudiantes[i]
+    }
 }
 
-console.log(mayorPromedio)
+console.log('El estudiante con mayor promedio es: ', EstmayorPromedio)
+
+//metodo 2 usando .reduce()
+const mpromedio = estudiantes.reduce( (mayorPro, estudiante) => estudiante.promedio > mayorPro.promedio ? estudiante : mayorPro, estudiantes[0])
+
+console.log('El estudiante con mayor promedio es: ', mpromedio)

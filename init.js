@@ -8,7 +8,6 @@ const main = (timeSeg) =>{
     }
 }  
 
-console.log("Hola mundo nuevo")
 main(2);
 main(-5);
 main(3);
